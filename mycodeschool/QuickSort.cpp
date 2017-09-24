@@ -12,17 +12,17 @@ void swap(char *a, char *b)
 int partition(char arr[], int start, int end)
 {
 	int x = arr[end];
-	int i = start - 1;
+	int i = start;
 	for(int j = start; j <= end-1; j++)
 	{
 		if(arr[j] <= x)
 		{
-			i = i + 1;
 			swap(&arr[i], &arr[j]);
+			++i;
 		}
 	}
-	swap(&arr[i+1], &arr[end]);
-	return i+1;
+	swap(&arr[i], &arr[end]);
+	return i;
 }
 
 void quickSort(char arr[], int start, int end)
